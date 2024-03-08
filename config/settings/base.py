@@ -150,7 +150,7 @@ LOGGING = {
             'style': '{',
         },
         'standard': {
-            'format': '%(asctime)s [%(levelname)s%] %(name)s: %(message)s'
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
         },
     },
     'handlers': {
@@ -170,11 +170,11 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler'
         },
         'file': {
-            'level': 'INFO', # 일반 정보를 출력할 목적으로 사용
+            'level': 'INFO',
             'filters': ['require_debug_false'],
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': BASE_DIR / 'logs/mysite.log',
-            'maxBytes': 1024*1024*5, # 5MB
+            'maxBytes': 1024*1024*5,  # 5 MB
             'backupCount': 5,
             'formatter': 'standard',
         },
